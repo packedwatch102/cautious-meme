@@ -1,3 +1,10 @@
+local lplr = game.Players.LocalPlayer
+local camera = game:GetService("Workspace").CurrentCamera
+local CurrentCamera = workspace.CurrentCamera
+local worldToViewportPoint = CurrentCamera.worldToViewportPoint
+local HeadOff = Vector3.new(0, 0.5, 0)
+local LegOff = Vector3.new(0,4,0)
+
 for i,v in pairs(game.Players:GetChildren()) do
     local BoxOutline = Drawing.new("Square")
     BoxOutline.Visible = false
