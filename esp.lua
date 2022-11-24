@@ -1,5 +1,19 @@
+for i,v in pairs(game.Players:GetChildren()) do
+    local BoxOutline = Drawing.new("Square")
+    BoxOutline.Visible = false
+    BoxOutline.Color = Color3.new(5,5,5)
+    BoxOutline.Thickness = 3
+    BoxOutline.Transparency = 1
+    BoxOutline.Filled = false
 
+    local Box = Drawing.new("Square")
+    Box.Visible = false
+    Box.Color = Color3.new(5,5,5)
+    Box.Thickness = 2
+    Box.Transparency = 1
+    Box.Filled = false
     function boxesp()
+        
         game:GetService("RunService").RenderStepped:Connect(function()
             if v.Character ~= nil and v.Character:FindFirstChild("Humanoid") ~= nil and v.Character:FindFirstChild("HumanoidRootPart") ~= nil and v ~= lplr and v.Character.Humanoid.Health > 0 then
                 local Vector, onScreen = camera:worldToViewportPoint(v.Character.HumanoidRootPart.Position)
