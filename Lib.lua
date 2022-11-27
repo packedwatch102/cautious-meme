@@ -12,7 +12,7 @@ iRay  | Programming
 
 local Release = "Beta 7R"
 local NotificationDuration = 6.5
-local RayfieldFolder = Rayfield
+local RayfieldFolder = "Rayfield"
 local ConfigurationFolder = RayfieldFolder.."/Configurations"
 local ConfigurationExtension = ".rfld"
 
@@ -32,11 +32,11 @@ local RayfieldLibrary = {
 			NotificationBackground = Color3.fromRGB(20, 20, 20),
 			NotificationActionsBackground = Color3.fromRGB(230, 230, 230),
 			
-			TabBackground = Color3.fromRGB(34,34,34),
+			TabBackground = Color3.fromRGB(80, 80, 80),
 			TabStroke = Color3.fromRGB(85, 85, 85),
-			TabBackgroundSelected = Color3.fromRGB(50,50,50),
-			TabTextColor = Color3.fromRGB(230, 230, 230),
-			SelectedTabTextColor = Color3.fromRGB(200, 200, 200),
+			TabBackgroundSelected = Color3.fromRGB(210, 210, 210),
+			TabTextColor = Color3.fromRGB(240, 240, 240),
+			SelectedTabTextColor = Color3.fromRGB(50, 50, 50),
 			
 			ElementBackground = Color3.fromRGB(35, 35, 35),
 			ElementBackgroundHover = Color3.fromRGB(40, 40, 40),
@@ -636,7 +636,7 @@ end
 
 function Hide()
 	Debounce = true
-	RayfieldLibrary:Notify({Title = "Interface Hidden", Content = "Interface Hidden, Toggle : Right Shift", Duration = 7})
+	RayfieldLibrary:Notify({Title = "Interface Hidden", Content = "The Interface has been Hidden, Toggle is RSHIFT", Duration = 7})
 	TweenService:Create(Main, TweenInfo.new(0.5, Enum.EasingStyle.Quint), {Size = UDim2.new(0, 470, 0, 400)}):Play()
 	TweenService:Create(Main.Topbar, TweenInfo.new(0.5, Enum.EasingStyle.Quint), {Size = UDim2.new(0, 470, 0, 45)}):Play()
 	TweenService:Create(Main, TweenInfo.new(0.5, Enum.EasingStyle.Quint), {BackgroundTransparency = 1}):Play()
@@ -884,7 +884,7 @@ function RayfieldLibrary:CreateWindow(Settings)
 	LoadingFrame.Title.Text = Settings.LoadingTitle or "Rayfield Interface Suite"
 	LoadingFrame.Subtitle.Text = Settings.LoadingSubtitle or "by Sirius"
 	if Settings.LoadingTitle ~= "Rayfield Interface Suite" then
-		LoadingFrame.Version.Text = "1.0"
+		LoadingFrame.Version.Text = "Rayfield UI"
 	end
 	Topbar.Visible = false
 	Elements.Visible = false
@@ -1628,9 +1628,9 @@ function RayfieldLibrary:CreateWindow(Settings)
 				end
 
 				for _, droption in ipairs(Dropdown.List:GetChildren()) do
-					if droption.Name ~= NewOption then
-						if droption.ClassName == "Frame" and droption.Name ~= "Placeholder" then
-							droption.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+					if droption.ClassName == "Frame" and droption.Name ~= "Placeholder" then
+							droption.BackgroundColor3 = Color3.fromRGB(30, 30, 30)	if droption.Name ~= NewOption then
+					
 						end
 					else
 						droption.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
